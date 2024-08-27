@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import {
     AppBar,
@@ -175,11 +175,10 @@ function Navbar(props) {
                 {/* bg-[#343a40] */}
                 <AppBar
                     component="nav"
-                    className={`bg-[#1b1a1a] px-[30px] ${
-                        user
+                    className={`bg-[#1b1a1a] px-[30px] ${user
                             ? "min-[1060px]:px-[80px]"
                             : "min-[1060px]:px-[96px]"
-                    } `}
+                        } `}
                 >
                     <Toolbar className="px-0 min-h-[72px] ">
                         <Avatar
@@ -209,11 +208,11 @@ function Navbar(props) {
                                 className="block placeholder-elipsis w-full h-full outline-none text-title bg-transparent text-sm sm:text-base ml-2 font-light placeholder:text-[#878793] "
                                 // value={searchText}
                                 onChange={async (event) => {
-                                     setSearchText(event.target.value)
+                                    setSearchText(event.target.value)
                                     await onChangeSearchText(event);
                                     // event.target.value = "";
                                 }}
-                                style={{paddingRight:'15px'}}
+                                style={{ paddingRight: '15px' }}
                                 placeholder="Search Songs..."
                             />
                             {/* {console.log("searchText: " + searchText)} */}
@@ -354,10 +353,9 @@ function Navbar(props) {
                         )}
 
                         <div
-                            className={` block ${
-                                user ? "" : "lg:hidden "
-                            } h-full text-white`}
-                            
+                            className={` block ${user ? "" : "lg:hidden "
+                                } h-full text-white`}
+
                             onClick={() => handleDrawerToggle()}
                         >
                             <div
@@ -410,10 +408,9 @@ function Navbar(props) {
 
                         {/* Menu Bar */}
                         <Box
-                        ref={menuRef}
-                            className={` border-[#e8eaed] z-30 absolute top-full mt-2 w-64 h-fit bg-[#1c1b1b] -bottom-[152px] right-0 pt-5 rounded-xl stroke-2 -mr-5 shadow-popover transform opacity-100 scale-100 ${
-                                !user && "lg:hidden"
-                            } ${mobileOpen ? "block" : "hidden"} `}
+                            ref={menuRef}
+                            className={` border-[#e8eaed] z-30 absolute top-full mt-2 w-64 h-fit bg-[#1c1b1b] -bottom-[152px] right-0 pt-5 rounded-xl stroke-2 -mr-5 shadow-popover transform opacity-100 scale-100 ${!user && "lg:hidden"
+                                } ${mobileOpen ? "block" : "hidden"} `}
                         >
                             <span className="absolute right-[1.375rem] top-[-0.563rem] h-[0.625rem] w-[0.75rem] bg-inherit clip-polygon-nav  "></span>
 
@@ -448,9 +445,9 @@ function Navbar(props) {
                                                     </svg>
                                                 </span>
                                             </span>
-                                            <div className=" ml-2 font-light text-[#fdfdfd] ">
-                                                {/* {user} */}
-                                                {user.name}
+                                            <div className="ml-2 pl-2 font-light text-[#fdfdfd]">
+                                                {/* Render user name if available */}
+                                                {user ? user.name : 'Profile'}  Profile
                                             </div>
                                         </span>
                                     </Box>
@@ -479,6 +476,7 @@ function Navbar(props) {
                             )}
                             <Box className="full flex justify-center">
                                 <hr className="w-full h-[0.045rem] border-0 opacity-20 my-4 bg-[#f5f5f5] " />
+
                             </Box>
 
                             {/* Manage Subscription */}
